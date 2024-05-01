@@ -1,13 +1,13 @@
 // ! Copyright (c) 2024, Brandon Ramirez
 
 export type ClassnamesFuncArgs =
-	| string
-	| undefined
-	| boolean
-	| null
-	| number
-	| Record<string, unknown>
-	| Array<ClassnamesFuncArgs>;
+    | string
+    | undefined
+    | boolean
+    | null
+    | number
+    | Record<string, unknown>
+    | Array<ClassnamesFuncArgs>;
 
 /**
  * Generate an HTML `class` attribute string based on the given input args.
@@ -18,33 +18,32 @@ export type ClassnamesFuncArgs =
  * - `array`: call the function recursively with the array as arguments
  */
 export default function classnames(...args: ClassnamesFuncArgs[]): string {
-	let response = '';
+    let response = "";
 
-	for (const arg of args) {
-		if (!arg) continue;
+    for (const arg of args) {
+        if (!arg) continue;
 
-		if (typeof arg === 'string' || typeof arg === 'number') {
-			response += `${arg} `;
-		} else if (Array.isArray(arg)) {
-			// Recursively call the function on the array
-			response += classnames(...arg) + ' ';
-		} else if (typeof arg === 'object' && arg !== null) {
-			const argEntries = Object.entries(arg);
-			if (argEntries.length === 0) continue;
+        if (typeof arg === "string" || typeof arg === "number") {
+            response += `${arg} `;
+        } else if (Array.isArray(arg)) {
+            // Recursively call the function on the array
+            response += classnames(...arg) + " ";
+        } else if (typeof arg === "object" && arg !== null) {
+            const argEntries = Object.entries(arg);
+            if (argEntries.length === 0) continue;
 
-			// Get an array of the object's keys that have truthy values
-			const filteredClassStrings = argEntries
-				.filter((argTuple) => !!argTuple[1]) // Filter out keys with falsy values
-				.map((argTuple) => argTuple[0]); // Map into array of just the keys (class strings)
+            // Get an array of the object's keys that have truthy values
+            const filteredClassStrings = argEntries
+                .filter((argTuple) => !!argTuple[1]) // Filter out keys with falsy values
+                .map((argTuple) => argTuple[0]); // Map into array of just the keys (class strings)
 
-			// Recursively call the function on the filtered arguments
-			response += classnames(...filteredClassStrings) + ' ';
-		}
+            // Recursively call the function on the filtered arguments
+            response += classnames(...filteredClassStrings) + " ";
+        }
+    }
 
-	}
+    // Filter out all excess spaces
+    response = response.replace(/\s+/g, " ").trim();
 
-	// Filter out all excess spaces
-	response = response.replace(/\s+/g, ' ').trim();
-
-	return response;
+    return response;
 }
