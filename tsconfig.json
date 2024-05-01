@@ -1,16 +1,16 @@
 {
-  "compilerOptions": {
-    "target": "ES2019",
-    "module": "CommonJS",
-    "lib": ["ESNext", "DOM"],
-    "outDir": "build",
-    "strict": true,
-    "skipLibCheck": true,
-    "moduleDetection": "force",
-    "moduleResolution": "Node",
-    "declaration": true,
-    "declarationMap": false
-  },
-  "include": ["./src/**/*", "index.ts"],
-  "exclude": ["./src/**/*.test.ts", "node_modules", "build"]
+    "compilerOptions": {
+        "target": "ES2019",
+        "module": "CommonJS",
+        "lib": ["ESNext", "DOM"],
+        "outDir": "build",
+        "strict": true,
+        "skipLibCheck": true,
+        "moduleDetection": "force",
+        "moduleResolution": "Node",
+        "declaration": true,
+        "declarationMap": false
+    },
+    "include": ["./src/**/*", "index.ts"],
+    "exclude": ["./src/**/*.test.ts", "node_modules", "build"]
 }
