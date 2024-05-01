@@ -1,6 +1,6 @@
 {
   "name": "@brr-dev/classnames",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Generate an HTML class attribute string... however you want..",
   "main": "build/index.js",
   "types": "build/index.d.ts",

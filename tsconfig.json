@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "lib": ["ESNext"],
+    "target": "ES2019",
+    "module": "CommonJS",
+    "lib": ["ESNext", "DOM"],
     "outDir": "build",
     "strict": true,
-    "alwaysStrict": true,
     "skipLibCheck": true,
     "moduleDetection": "force",
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "sourceMap": true
   },
   "include": ["./src/**/*", "index.ts"],
   "exclude": ["./src/**/*.test.ts", "node_modules", "build"]
