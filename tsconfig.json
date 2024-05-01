@@ -1,22 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
-    "module": "CommonJS",
-    "lib": ["DOM"],
-    "declaration": true,
-    "declarationMap": false,
-    "outDir": "./dist",
-    "downlevelIteration": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext"],
+    "outDir": "build",
     "strict": true,
     "alwaysStrict": true,
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowJs": false
+    "moduleDetection": "force",
+    "moduleResolution": "Node"
   },
-  "include": ["./src/**/*"],
-  "exclude": ["./src/**/*.test.ts"]
+  "include": ["./src/**/*", "index.ts"],
+  "exclude": ["./src/**/*.test.ts", "node_modules", "build"]
 }
